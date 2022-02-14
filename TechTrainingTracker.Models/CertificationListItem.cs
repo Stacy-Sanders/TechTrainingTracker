@@ -5,31 +5,25 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechTrainingTracker.Data;
 
-namespace TechTrainingTracker.Data
+namespace TechTrainingTracker.Models
 {
-    public class Certification
+    public class CertificationListItem
     {
-        [Key]
+
         public int CertificationID { get; set; }
 
-        [Required, Display(Name = "Certification Name")]
+        [Display(Name = "Certification Name")]
         public string CertificationName { get; set; }
 
-        [Required, Display(Name = "Exam Required?")]
-        public bool HasExam { get; set; }
-
-        [Required, Display(Name = "Exam Fee")]
-        public double ExamFee { get; set; }
-
-        [Required, Display(Name = "Issued")]
+        [Display(Name = "Issued")]
         public DateTimeOffset IssueDate { get; set; }
 
         [Display(Name = "Expires")]
-        public DateTimeOffset? ExpireDate { get; set; }
+        public DateTimeOffset? ExprireDate { get; set; }
 
         [ForeignKey(nameof(Company))]
         public int CompanyID { get; set; }
-        public virtual Company Company { get; set; }
     }
 }

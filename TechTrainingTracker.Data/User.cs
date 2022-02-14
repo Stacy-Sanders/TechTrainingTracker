@@ -12,6 +12,6 @@ namespace TechTrainingTracker.Data
         [Key]
         public int UserID { get; set; }
 
-        public Guid Username { get; set; }
+        //public Guid Username { get; set; }
     }
 }
