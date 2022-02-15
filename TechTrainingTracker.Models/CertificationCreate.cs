@@ -9,15 +9,12 @@ using TechTrainingTracker.Data;
 
 namespace TechTrainingTracker.Models
 {
-    public class CertificationListItem
+    public class CertificationCreate
     {
-
-        public int CertificationID { get; set; }
-
-        [Display(Name = "Certification Name")]
+        [Required, Display(Name = "Certification Name")]
         public string CertificationName { get; set; }
 
-        [Display(Name = "Issued")]
+        [Required, Display(Name = "Issued")]
         public DateTimeOffset IssueDate { get; set; }
 
         [Display(Name = "Expires")]
