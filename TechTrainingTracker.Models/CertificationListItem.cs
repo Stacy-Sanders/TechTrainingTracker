@@ -17,6 +17,12 @@ namespace TechTrainingTracker.Models
         [Display(Name = "Certification Name")]
         public string CertificationName { get; set; }
 
+        [Required, Display(Name = "Exam Required?")]
+        public bool HasExam { get; set; }
+
+        [Required, Display(Name = "Exam Fee")]
+        public double ExamFee { get; set; }
+
         [Display(Name = "Issued")]
         public DateTimeOffset IssueDate { get; set; }
 

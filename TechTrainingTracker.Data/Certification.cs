@@ -13,6 +13,12 @@ namespace TechTrainingTracker.Data
         [Key]
         public int CertificationID { get; set; }
 
+        public Guid AdminID { get; set; }
+
+        //[ForeignKey(nameof(User))]
+        //public int UserID { get; set; }
+        //public virtual User User { get; set; }
+
         [Required, Display(Name = "Certification Name")]
         public string CertificationName { get; set; }
 
