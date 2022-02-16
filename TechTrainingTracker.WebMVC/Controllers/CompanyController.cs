@@ -71,6 +71,30 @@ namespace TechTrainingTracker.WebMVC.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, CompanyEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if(model.CompanyID != id)
+            {
+                ModelState.AddModelError("", "Id does not match");
+                return View(model);
+            }
+
+            var service = CreateCompanyService();
+
+            if (service.UpdateCompany(model))
+            {
+                TempData["SaveResult"] = "Company was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Company could not be updated.");
+            return View();
+        }
+
         private CompanyService CreateCompanyService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

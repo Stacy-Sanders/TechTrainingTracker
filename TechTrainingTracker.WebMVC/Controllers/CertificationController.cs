@@ -82,7 +82,7 @@ namespace TechTrainingTracker.WebMVC.Controllers
             
             if(model.CertificationID != id)
             {
-                ModelState.AddModelError("", "Id Mismatch");
+                ModelState.AddModelError("", "Id does not match.");
                 return View(model);
             }
 
