@@ -58,6 +58,7 @@
     <Compile Include="Certification\CertificationDetail.cs" />
     <Compile Include="Certification\CertificationEdit.cs" />
     <Compile Include="Certification\CertificationListItem.cs" />
+    <Compile Include="Company\CompanyCreate.cs" />
     <Compile Include="Company\CompanyListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
