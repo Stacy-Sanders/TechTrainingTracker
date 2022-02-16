@@ -57,6 +57,7 @@
     <Compile Include="CertificationService.cs" />
     <Compile Include="CompanyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrainingService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

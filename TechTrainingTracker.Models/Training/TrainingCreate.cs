@@ -9,7 +9,7 @@ using TechTrainingTracker.Data;
 
 namespace TechTrainingTracker.Models.Training
 {
-    public class TrainingListItem
+    public class TrainingCreate
     {
         public int TrainingID { get; set; }
 
@@ -35,7 +35,7 @@ namespace TechTrainingTracker.Models.Training
 
         public int Duration { get; set; }
 
-        [ForeignKey(nameof(Company)), Display(Name = "Company ID")]
+        [ForeignKey(nameof(Company))]
         public int CompanyID { get; set; }
     }
 }
