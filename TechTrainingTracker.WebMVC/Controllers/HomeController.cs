@@ -15,14 +15,14 @@ namespace TechTrainingTracker.WebMVC.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "About Tech Training Tracker";
+            ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Questions, Comments, Concerns?";
+            ViewBag.Message = "Your contact page.";
 
             return View();
         }

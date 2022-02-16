@@ -54,23 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CertificationService.cs" />
-    <Compile Include="CompanyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TechTrainingTracker.Data\TechTrainingTracker.Data.csproj">
-      <Project>{0f0445aa-7217-4f88-877f-fbf2026cec12}</Project>
-      <Name>TechTrainingTracker.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TechTrainingTracker.Models\TechTrainingTracker.Models.csproj">
-      <Project>{15b4896f-a1fe-42f7-867c-0b2c1e8fa89a}</Project>
-      <Name>TechTrainingTracker.Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
