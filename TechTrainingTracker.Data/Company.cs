@@ -12,6 +12,8 @@ namespace TechTrainingTracker.Data
         [Key]
         public int CompanyID { get; set; }
 
+        public Guid AdminID { get; set; }
+
         [Required, Display(Name = "Company Name")]
         public string CompanyName { get; set; }
 
