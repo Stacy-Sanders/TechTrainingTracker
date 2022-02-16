@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TechTrainingTracker.Data
+namespace TechTrainingTracker.Models.Company
 {
-    public class Company
+    public class CompanyListItem
     {
-        [Key]
         public int CompanyID { get; set; }
 
         [Required, Display(Name = "Company Name")]

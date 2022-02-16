@@ -54,10 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CertificationCreate.cs" />
-    <Compile Include="CertificationDetail.cs" />
-    <Compile Include="CertificationEdit.cs" />
-    <Compile Include="CertificationListItem.cs" />
+    <Compile Include="Certification\CertificationCreate.cs" />
+    <Compile Include="Certification\CertificationDetail.cs" />
+    <Compile Include="Certification\CertificationEdit.cs" />
+    <Compile Include="Certification\CertificationListItem.cs" />
+    <Compile Include="Company\CompanyListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +70,11 @@
       <Project>{0F0445AA-7217-4F88-877F-FBF2026CEC12}</Project>
       <Name>TechTrainingTracker.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Skill\" />
+    <Folder Include="Training\" />
+    <Folder Include="User\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

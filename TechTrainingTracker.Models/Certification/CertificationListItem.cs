@@ -14,7 +14,7 @@ namespace TechTrainingTracker.Models
 
         public int CertificationID { get; set; }
 
-        [Display(Name = "Certification Name")]
+        [Required, Display(Name = "Certification Name")]
         public string CertificationName { get; set; }
 
         [Required, Display(Name = "Exam Required?")]
