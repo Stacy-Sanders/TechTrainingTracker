@@ -32,17 +32,35 @@ namespace TechTrainingTracker.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CompanyCreate model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
+            if (!ModelState.IsValid) return View(model);
 
+            var service = CreateCompanyService();
+
+            if (service.CreateCompany(model))
+            {
+                TempData["SaveResult"] = "The company was created.";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Company could not be created.");
+
+            return View(model);
+            
+        }
+
+        public ActionResult Details(int id)
+        {
+            var svc = CreateCompanyService();
+            var model = svc.GetCompanyById(id);
+
+            return View(model);
+        }
+
+        private CompanyService CreateCompanyService()
+        {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new CompanyService(userId);
-
-            service.CreateCompany(model);
-
-            return RedirectToAction("Index");
+            return service;
         }
     }
 }

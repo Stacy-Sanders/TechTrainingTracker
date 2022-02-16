@@ -58,6 +58,26 @@ namespace TechTrainingTracker.Services
                 return query.ToArray();
             }
         }
+
+        public CompanyDetail GetCompanyById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Companies
+                        .Single(e => e.CompanyID == id && e.AdminID == _userId);
+                return
+                    new CompanyDetail
+                    {
+                        CompanyID = entity.CompanyID,
+                        CompanyName = entity.CompanyName,
+                        HasApp = entity.HasApp,
+                        HasAccreditedCourses = entity.HasAccreditedCourses,
+                        Accreditation = entity.Accreditation
+                    };
+            }
+        }
     }
 }
 
