@@ -55,6 +55,25 @@ namespace TechTrainingTracker.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateCertificationService();
+            var detail = service.GetCertificationById(id);
+            var model =
+                new CertificationEdit
+                {
+                    CertificationID = detail.CertificationID,
+                    CertificationName = detail.CertificationName,
+                    HasExam = detail.HasExam,
+                    ExamFee = detail.ExamFee,
+                    IssueDate = detail.IssueDate,
+                    ExpireDate = detail.ExpireDate,
+                    CompanyID = detail.CompanyID
+                };
+
+            return View(model);
+        }
+
         private CertificationService CreateCertificationService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

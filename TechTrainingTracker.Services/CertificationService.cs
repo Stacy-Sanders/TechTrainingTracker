@@ -84,5 +84,27 @@ namespace TechTrainingTracker.Services
                     };
             }
         }
+
+        public bool UpdateCertification(CertificationEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Certifications
+                        .Single(e => e.CertificationID == model.CertificationID && e.AdminID == _userId);
+
+                entity.CertificationName = model.CertificationName;
+                entity.HasExam = model.HasExam;
+                entity.ExamFee = model.ExamFee;
+                entity.IssueDate = model.IssueDate;
+                entity.ExpireDate = model.ExpireDate;
+                entity.CompanyID = model.CompanyID;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
+
+       
