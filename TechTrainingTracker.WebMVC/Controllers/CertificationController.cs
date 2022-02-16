@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TechTrainingTracker.Models;
+using TechTrainingTracker.Services;
 
 namespace TechTrainingTracker.WebMVC.Controllers
 {
@@ -13,7 +15,10 @@ namespace TechTrainingTracker.WebMVC.Controllers
         // GET: Certification
         public ActionResult Index()
         {
-            var model = new CertificationListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CertificationService(userId);
+            var model = service.GetCertifications();
+
             return View(model);
         }
 
@@ -27,12 +32,27 @@ namespace TechTrainingTracker.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CertificationCreate model)
         {
-            if (ModelState.IsValid)
-            {
+            if (!ModelState.IsValid) return View(model);
 
-            }
+            var service = CreateCertificationService();
+
+            if (service.CreateCertification(model))
+            {
+                TempData["SaveResult"] = "Your certification was created.";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Certification could not be created.");
 
             return View(model);
         }
+
+        private CertificationService CreateCertificationService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CertificationService(userId);
+            return service;
+        }
     }
 }
+

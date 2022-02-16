@@ -34,8 +34,8 @@ namespace TechTrainingTracker.Data
 
         public DbSet<Certification> Certifications { get; set; }
         public DbSet<Training> Trainings { get; set; }
-        public DbSet<Skill> Skills { get; set; }
         public DbSet<Company> Companies { get; set; }
+        public DbSet<Skill> Skills { get; set; }
         public DbSet<User> User { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

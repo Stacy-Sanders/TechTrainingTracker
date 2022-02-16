@@ -25,7 +25,7 @@ namespace TechTrainingTracker.Data
         [Required, Display(Name = "Exam Required?")]
         public bool HasExam { get; set; }
 
-        [Required, Display(Name = "Exam Fee")]
+        [Required, Display(Name = "Exam Fee ($USD)")]
         public double ExamFee { get; set; }
 
         [Required, Display(Name = "Issued")]
