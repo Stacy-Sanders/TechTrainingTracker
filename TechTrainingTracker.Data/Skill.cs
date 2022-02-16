@@ -11,5 +11,11 @@ namespace TechTrainingTracker.Data
     {
         [Key]
         public int SkillID { get; set; }
+
+        public Guid AdminId { get; set; }
+
+        public string Language { get; set; }
+
+        public string SkillLevel { get; set; }
     }
 }

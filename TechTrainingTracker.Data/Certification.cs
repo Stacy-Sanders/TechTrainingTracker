@@ -22,6 +22,12 @@ namespace TechTrainingTracker.Data
         [Required, Display(Name = "Certification Name")]
         public string CertificationName { get; set; }
 
+        //[ForeignKey(nameof(Skill))]
+        //public int SkillID { get; set; }
+        //public virtual Skill Skill { get; set; }
+
+        //public enum Desirability { get; set; }
+
         [Required, Display(Name = "Exam Required?")]
         public bool HasExam { get; set; }
 

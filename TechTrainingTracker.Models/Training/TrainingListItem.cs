@@ -5,34 +5,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechTrainingTracker.Data;
 
-namespace TechTrainingTracker.Data
+namespace TechTrainingTracker.Models.Training
 {
-    public enum Level 
+    public class TrainingListItem
     {
-        Beginner = 1,
-        Intermediate,
-        Advanced
-    }
-
-    public enum Location 
-    {
-        Virtual = 1,
-        InPerson
-    }
-
-    public enum Method
-    {
-        SelfPaced = 1,
-        InstructorLed,
-    }
-
-    public class Training
-    {
-        [Key]
         public int TrainingID { get; set; }
-
-        public Guid AdminID { get; set; }
 
         [Display(Name = "Course Name")]
         public string CourseName { get; set; }
@@ -58,6 +37,5 @@ namespace TechTrainingTracker.Data
 
         [ForeignKey(nameof(Company))]
         public int CompanyID { get; set; }
-        public virtual Company Company { get; set; }
     }
 }
