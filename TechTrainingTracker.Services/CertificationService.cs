@@ -27,7 +27,7 @@ namespace TechTrainingTracker.Services
                     HasExam = model.HasExam,
                     ExamFee = model.ExamFee,
                     IssueDate = model.IssueDate,
-                    ExpireDate = model.ExprireDate,
+                    ExpireDate = model.ExpireDate,
                     CompanyID = model.CompanyID
                 };
 
@@ -55,11 +55,33 @@ namespace TechTrainingTracker.Services
                                     HasExam = e.HasExam,
                                     ExamFee = e.ExamFee,
                                     IssueDate = e.IssueDate,
-                                    ExprireDate = e.ExpireDate,
+                                    ExpireDate = e.ExpireDate,
                                     CompanyID = e.CompanyID
                                 }
                         );
                 return query.ToArray();
+            }
+        }
+
+        public CertificationDetail GetCertificationById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Certifications
+                        .Single(e => e.CertificationID == id && e.AdminID == _userId);
+                return
+                    new CertificationDetail
+                    {
+                        CertificationID = entity.CertificationID,
+                        CertificationName = entity.CertificationName,
+                        HasExam = entity.HasExam,
+                        ExamFee = entity.ExamFee,
+                        IssueDate = entity.IssueDate,
+                        ExpireDate = entity.ExpireDate,
+                        CompanyID = entity.CompanyID
+                    };
             }
         }
     }

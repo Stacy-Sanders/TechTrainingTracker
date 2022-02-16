@@ -24,7 +24,7 @@ namespace TechTrainingTracker.Models
         public DateTimeOffset IssueDate { get; set; }
 
         [Display(Name = "Expires")]
-        public DateTimeOffset? ExprireDate { get; set; }
+        public DateTimeOffset? ExpireDate { get; set; }
 
         [ForeignKey(nameof(Company)), Display(Name = "Company ID")]
         public int CompanyID { get; set; }
