@@ -45,7 +45,6 @@ namespace TechTrainingTracker.WebMVC.Controllers
             ModelState.AddModelError("", "Company could not be created.");
 
             return View(model);
-            
         }
 
         public ActionResult Details(int id)
@@ -53,6 +52,22 @@ namespace TechTrainingTracker.WebMVC.Controllers
             var svc = CreateCompanyService();
             var model = svc.GetCompanyById(id);
 
+            return View(model);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreateCompanyService();
+            var detail = service.GetCompanyById(id);
+            var model =
+                new CompanyEdit
+                {
+                    CompanyID = detail.CompanyID,
+                    CompanyName = detail.CompanyName,
+                    HasApp = detail.HasApp,
+                    HasAccreditedCourses = detail.HasAccreditedCourses,
+                    Accreditation = detail.Accreditation
+                };
             return View(model);
         }
 
@@ -64,3 +79,4 @@ namespace TechTrainingTracker.WebMVC.Controllers
         }
     }
 }
+            

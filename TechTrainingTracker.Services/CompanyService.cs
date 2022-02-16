@@ -78,6 +78,24 @@ namespace TechTrainingTracker.Services
                     };
             }
         }
+
+        public bool UpdateCompany(CompanyEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Companies
+                        .Single(e => e.CompanyID == model.CompanyID && e.AdminID == _userId);
+
+                entity.CompanyName = model.CompanyName;
+                entity.HasApp = model.HasApp;
+                entity.HasAccreditedCourses = model.HasAccreditedCourses;
+                entity.Accreditation = model.Accreditation;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
 
