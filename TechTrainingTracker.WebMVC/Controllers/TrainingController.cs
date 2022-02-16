@@ -76,6 +76,13 @@ namespace TechTrainingTracker.WebMVC.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, TrainingEdit model)
+        {
+            return View();
+        }
+
         private TrainingService CreateTrainingService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
