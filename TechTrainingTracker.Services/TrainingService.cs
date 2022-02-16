@@ -91,5 +91,27 @@ namespace TechTrainingTracker.Services
                     };
             }
         }
+
+        public bool UpdateTraining(TrainingEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Trainings
+                        .Single(e => e.TrainingID == model.TrainingID && e.AdminID == _userId);
+
+                entity.CourseName = model.CourseName;
+                entity.Language = model.Language;
+                entity.DifficultyLevel = model.DifficultyLevel;
+                entity.Cost = model.Cost;
+                entity.LearningLocation = model.LearningLocation;
+                entity.LearningMethod = model.LearningMethod;
+                entity.Duration = model.Duration;
+                entity.CompanyID = model.CompanyID;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
