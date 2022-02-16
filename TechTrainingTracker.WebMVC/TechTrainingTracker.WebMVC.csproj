@@ -238,6 +238,7 @@
     <Content Include="Views\Certification\Index.cshtml" />
     <Content Include="Views\Certification\Create.cshtml" />
     <Content Include="Views\Certification\Details.cshtml" />
+    <Content Include="Views\Certification\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

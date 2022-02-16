@@ -74,6 +74,31 @@ namespace TechTrainingTracker.WebMVC.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, CertificationEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+            
+            if(model.CertificationID != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateCertificationService();
+
+            if (service.UpdateCertification(model))
+            {
+                TempData["SaveResult"] = "Your certification was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your certification could not be updated.");
+            return View(model);
+        }
+
+
         private CertificationService CreateCertificationService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
