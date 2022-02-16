@@ -240,6 +240,7 @@
     <Content Include="Views\Certification\Details.cshtml" />
     <Content Include="Views\Certification\Edit.cshtml" />
     <Content Include="Views\Certification\Delete.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTimeOffset.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
