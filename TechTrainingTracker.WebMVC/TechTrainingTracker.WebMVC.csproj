@@ -250,6 +250,7 @@
     <Content Include="Views\Company\Delete.cshtml" />
     <Content Include="Views\Training\Index.cshtml" />
     <Content Include="Views\Training\Create.cshtml" />
+    <Content Include="Views\Training\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

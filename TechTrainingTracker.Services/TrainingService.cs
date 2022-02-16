@@ -67,5 +67,29 @@ namespace TechTrainingTracker.Services
                 return query.ToArray();        
             }
         }
+
+        public TrainingDetail GetTrainingById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Trainings
+                        .Single(e => e.TrainingID == id && e.AdminID == _userId);
+                return
+                    new TrainingDetail
+                    {
+                        TrainingID = entity.TrainingID,
+                        CourseName = entity.CourseName,
+                        Language = entity.Language,
+                        DifficultyLevel = entity.DifficultyLevel,
+                        Cost = entity.Cost,
+                        LearningLocation = entity.LearningLocation,
+                        LearningMethod = entity.LearningMethod,
+                        Duration = entity.Duration,
+                        CompanyID = entity.CompanyID
+                    };
+            }
+        }
     }
 }

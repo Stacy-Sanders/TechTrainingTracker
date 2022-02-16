@@ -47,6 +47,14 @@ namespace TechTrainingTracker.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateTrainingService();
+            var model = svc.GetTrainingById(id);
+
+            return View(model);
+        }
+
         private TrainingService CreateTrainingService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
