@@ -11,7 +11,6 @@ namespace TechTrainingTracker.Models.Training
 {
     public class TrainingCreate
     {
-        public int TrainingID { get; set; }
 
         [Display(Name = "Course Name")]
         public string CourseName { get; set; }
