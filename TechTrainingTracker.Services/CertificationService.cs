@@ -104,6 +104,21 @@ namespace TechTrainingTracker.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public  bool DeleteCertification(int certificationID)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Certifications
+                        .Single(e => e.CertificationID == certificationID && e.AdminID == _userId);
+
+                ctx.Certifications.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
 
