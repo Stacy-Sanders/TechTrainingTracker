@@ -96,6 +96,21 @@ namespace TechTrainingTracker.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteCompany(int companyID)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Companies
+                        .Single(e => e.CompanyID == companyID && e.AdminID == _userId);
+
+                ctx.Companies.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
 
