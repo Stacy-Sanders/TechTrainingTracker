@@ -24,15 +24,19 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
+                        <li>@Html.ActionLink("Users", "Index", "User")</li>
+                    }
+                    @if (User.Identity.IsAuthenticated)
+                    {
                         <li>@Html.ActionLink("Certifications", "Index", "Certification")</li>
                     }
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Companies", "Index", "Company")</li>
+                        <li>@Html.ActionLink("Trainings", "Index", "Training")</li>
                     }
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Trainings", "Index", "Training")</li>
+                        <li>@Html.ActionLink("Companies", "Index", "Company")</li>
                     }
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>

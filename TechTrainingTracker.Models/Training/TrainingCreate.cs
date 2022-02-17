@@ -17,7 +17,6 @@ namespace TechTrainingTracker.Models.Training
 
         [ForeignKey(nameof(User))]
         public int UserID { get; set; }
-        public virtual User User { get; set; }
 
         public string Language { get; set; }
 

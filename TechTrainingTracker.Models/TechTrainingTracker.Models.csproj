@@ -67,6 +67,8 @@
     <Compile Include="Training\TrainingDetail.cs" />
     <Compile Include="Training\TrainingEdit.cs" />
     <Compile Include="Training\TrainingListItem.cs" />
+    <Compile Include="User\UserCreate.cs" />
+    <Compile Include="User\UserListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -80,7 +82,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Skill\" />
-    <Folder Include="User\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
