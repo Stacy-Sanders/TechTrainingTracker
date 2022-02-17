@@ -113,5 +113,20 @@ namespace TechTrainingTracker.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteTraining(int trainingID)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Trainings
+                        .Single(e => e.TrainingID == trainingID && e.AdminID == _userId);
+
+                ctx.Trainings.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

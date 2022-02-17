@@ -80,7 +80,47 @@ namespace TechTrainingTracker.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, TrainingEdit model)
         {
-            return View();
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.TrainingID != id)
+            {
+                ModelState.AddModelError("", "Id does not match.");
+                return View(model);
+            }
+
+            var service = CreateTrainingService();
+
+            if (service.UpdateTraining(model))
+            {
+                TempData["SaveResult"] = "Your training course was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your training course could not be updated.");
+            return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateTrainingService();
+            var model = svc.GetTrainingById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateTrainingService();
+
+            service.DeleteTraining(id);
+
+            TempData["SaveResult"] = "Your training course was deleted.";
+
+            return RedirectToAction("Index");
         }
 
         private TrainingService CreateTrainingService()
