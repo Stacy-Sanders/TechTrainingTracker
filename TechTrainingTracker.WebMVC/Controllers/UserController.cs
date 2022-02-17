@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TechTrainingTracker.Models.User;
+using TechTrainingTracker.Services;
 
 namespace TechTrainingTracker.WebMVC.Controllers
 {
@@ -13,7 +15,10 @@ namespace TechTrainingTracker.WebMVC.Controllers
         // GET: User
         public ActionResult Index()
         {
-            var model = new UserListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new UserService(userId);
+            var model = service.GetUsers();
+
             return View(model);
         }
 
@@ -27,12 +32,36 @@ namespace TechTrainingTracker.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(UserCreate model)
         {
-            if (!ModelState.IsValid)
-            {
+            if (!ModelState.IsValid) return View(model);
+            
+            var service = CreateUserService();
 
+            if (service.CreateUser(model))
+            {
+                TempData["SaveResult"] = "User was created.";
+                return RedirectToAction("Index");
             }
+
+            ModelState.AddModelError("", "User could not be created.");
 
             return View(model);
         }
+
+        public ActionResult Details(int id)
+        {
+            var svc = CreateUserService();
+            var model = svc.GetUserById(id);
+
+            return View(model);
+        }
+        private UserService CreateUserService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new UserService(userId);
+            return service;
+        }
     }
 }
+            
+
+

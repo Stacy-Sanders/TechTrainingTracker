@@ -37,7 +37,7 @@ namespace TechTrainingTracker.Services
             }
         }
 
-        public IEnumerable<UserListItem> GetUser()
+        public IEnumerable<UserListItem> GetUsers()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -57,10 +57,35 @@ namespace TechTrainingTracker.Services
                                         EmailAddress = e.EmailAddress
                                     }
                         );
+
                 return query.ToArray();
             }
         }
+
+        public UserDetail GetUserById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .User
+                        .Single(e => e.UserID == id && e.AdminID == _userId);
+                return
+                    new UserDetail 
+                    { 
+                        UserID = entity.UserID,
+                        FirstName = entity.FirstName,
+                        LastName = entity.LastName,
+                        Address = entity.Address,
+                        PhoneNumber = entity.PhoneNumber,
+                        EmailAddress = entity.EmailAddress
+                    };
+            }
+        }
+
     }
 }
+
+
 
 
