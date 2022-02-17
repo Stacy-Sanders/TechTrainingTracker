@@ -69,6 +69,7 @@
     <Compile Include="Training\TrainingListItem.cs" />
     <Compile Include="User\UserCreate.cs" />
     <Compile Include="User\UserDetail.cs" />
+    <Compile Include="User\UserEdit.cs" />
     <Compile Include="User\UserListItem.cs" />
   </ItemGroup>
   <ItemGroup>

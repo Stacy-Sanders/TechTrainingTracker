@@ -83,6 +83,39 @@ namespace TechTrainingTracker.Services
             }
         }
 
+        public bool UpdateUser(UserEdit model) 
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .User
+                        .Single(e => e.UserID == model.UserID && e.AdminID == _userId);
+
+                entity.FirstName = model.FirstName;
+                entity.LastName = model.LastName;
+                entity.Address = model.Address;
+                entity.PhoneNumber = model.PhoneNumber;
+                entity.EmailAddress = model.EmailAddress;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteUser(int userID)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .User
+                        .Single(e => e.UserID == userID && e.AdminID == _userId);
+
+                ctx.User.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
 
