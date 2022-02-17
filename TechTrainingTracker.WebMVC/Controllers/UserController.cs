@@ -22,5 +22,17 @@ namespace TechTrainingTracker.WebMVC.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(UserCreate model)
+        {
+            if (!ModelState.IsValid)
+            {
+
+            }
+
+            return View(model);
+        }
     }
 }
