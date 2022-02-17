@@ -57,29 +57,17 @@
     <Compile Include="Certification.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202202142009384_InitialCreate.cs" />
-    <Compile Include="Migrations\202202142009384_InitialCreate.Designer.cs">
-      <DependentUpon>202202142009384_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202202171936223_UpdatedMigration.cs" />
+    <Compile Include="Migrations\202202171936223_UpdatedMigration.Designer.cs">
+      <DependentUpon>202202171936223_UpdatedMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202202142130269_FirstUpdate.cs" />
-    <Compile Include="Migrations\202202142130269_FirstUpdate.Designer.cs">
-      <DependentUpon>202202142130269_FirstUpdate.cs</DependentUpon>
+    <Compile Include="Migrations\202202172013372_SwitchedProperties.cs" />
+    <Compile Include="Migrations\202202172013372_SwitchedProperties.Designer.cs">
+      <DependentUpon>202202172013372_SwitchedProperties.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202202152119000_GuidFix.cs" />
-    <Compile Include="Migrations\202202152119000_GuidFix.Designer.cs">
-      <DependentUpon>202202152119000_GuidFix.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202202161800232_AddCompany.cs" />
-    <Compile Include="Migrations\202202161800232_AddCompany.Designer.cs">
-      <DependentUpon>202202161800232_AddCompany.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202202161834450_AddedGuid.cs" />
-    <Compile Include="Migrations\202202161834450_AddedGuid.Designer.cs">
-      <DependentUpon>202202161834450_AddedGuid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202202162116126_TrainingData.cs" />
-    <Compile Include="Migrations\202202162116126_TrainingData.Designer.cs">
-      <DependentUpon>202202162116126_TrainingData.cs</DependentUpon>
+    <Compile Include="Migrations\202202172018316_NotRequired.cs" />
+    <Compile Include="Migrations\202202172018316_NotRequired.Designer.cs">
+      <DependentUpon>202202172018316_NotRequired.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,23 +80,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202202142009384_InitialCreate.resx">
-      <DependentUpon>202202142009384_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202202171936223_UpdatedMigration.resx">
+      <DependentUpon>202202171936223_UpdatedMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202142130269_FirstUpdate.resx">
-      <DependentUpon>202202142130269_FirstUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202202172013372_SwitchedProperties.resx">
+      <DependentUpon>202202172013372_SwitchedProperties.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202152119000_GuidFix.resx">
-      <DependentUpon>202202152119000_GuidFix.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202161800232_AddCompany.resx">
-      <DependentUpon>202202161800232_AddCompany.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202161834450_AddedGuid.resx">
-      <DependentUpon>202202161834450_AddedGuid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202162116126_TrainingData.resx">
-      <DependentUpon>202202162116126_TrainingData.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202202172018316_NotRequired.resx">
+      <DependentUpon>202202172018316_NotRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

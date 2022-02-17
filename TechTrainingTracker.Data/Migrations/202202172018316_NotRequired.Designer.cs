@@ -7,13 +7,13 @@ namespace TechTrainingTracker.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class AddedGuid : IMigrationMetadata
+    public sealed partial class NotRequired : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedGuid));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(NotRequired));
         
         string IMigrationMetadata.Id
         {
-            get { return "202202161834450_AddedGuid"; }
+            get { return "202202172018316_NotRequired"; }
         }
         
         string IMigrationMetadata.Source

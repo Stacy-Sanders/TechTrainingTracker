@@ -63,6 +63,7 @@ namespace TechTrainingTracker.WebMVC.Controllers
                 new CertificationEdit
                 {
                     CertificationID = detail.CertificationID,
+                    UserID = detail.UserID,
                     CertificationName = detail.CertificationName,
                     HasExam = detail.HasExam,
                     ExamFee = detail.ExamFee,

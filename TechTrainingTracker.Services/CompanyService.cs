@@ -24,6 +24,10 @@ namespace TechTrainingTracker.Services
                 {
                     AdminID = _userId,
                     CompanyName = model.CompanyName,
+                    HasFreeCourses = model.HasFreeCourses,
+                    HasPaidSubscription = model.HasPaidSubscription,
+                    SubscriptionCost = model.SubscriptionCost,
+                    IsSubcriptionRequired = model.IsSubcriptionRequired,
                     HasApp = model.HasApp,
                     HasAccreditedCourses = model.HasAccreditedCourses,
                     Accreditation = model.Accreditation
@@ -50,6 +54,10 @@ namespace TechTrainingTracker.Services
                                 {
                                     CompanyID = e.CompanyID,
                                     CompanyName = e.CompanyName,
+                                    HasPaidSubscription = e.HasPaidSubscription,
+                                    SubscriptionCost = e.SubscriptionCost,
+                                    IsSubcriptionRequired = e.IsSubcriptionRequired,
+                                    HasFreeCourses = e.HasFreeCourses,
                                     HasApp = e.HasApp,
                                     HasAccreditedCourses = e.HasAccreditedCourses,
                                     Accreditation = e.Accreditation
@@ -72,6 +80,10 @@ namespace TechTrainingTracker.Services
                     {
                         CompanyID = entity.CompanyID,
                         CompanyName = entity.CompanyName,
+                        HasFreeCourses = entity.HasFreeCourses,
+                        HasPaidSubscription = entity.HasPaidSubscription,
+                        SubscriptionCost = entity.SubscriptionCost,
+                        IsSubcriptionRequired = entity.IsSubcriptionRequired,
                         HasApp = entity.HasApp,
                         HasAccreditedCourses = entity.HasAccreditedCourses,
                         Accreditation = entity.Accreditation
@@ -89,6 +101,10 @@ namespace TechTrainingTracker.Services
                         .Single(e => e.CompanyID == model.CompanyID && e.AdminID == _userId);
 
                 entity.CompanyName = model.CompanyName;
+                entity.HasFreeCourses = model.HasFreeCourses;
+                entity.HasPaidSubscription = model.HasPaidSubscription;
+                entity.SubscriptionCost = model.SubscriptionCost;
+                entity.IsSubcriptionRequired = model.IsSubcriptionRequired;
                 entity.HasApp = model.HasApp;
                 entity.HasAccreditedCourses = model.HasAccreditedCourses;
                 entity.Accreditation = model.Accreditation;

@@ -23,6 +23,7 @@ namespace TechTrainingTracker.Data
         [Required, Display(Name = "Last Name")]
         public string LastName { get; set; }
 
+        [Display(Name = "Full Name")]
         public string FullName 
         {
             get
@@ -39,8 +40,8 @@ namespace TechTrainingTracker.Data
         [Required, Display(Name = "Email Address")]
         public string EmailAddress { get; set; }
 
-        [ForeignKey(nameof(Certification))]
-        public int CertificationID { get; set; }
-        public virtual Certification Certification { get; set; }
+        //[ForeignKey(nameof(Skill))]
+        //public int SkillID { get; set; }
+        //public virtual Skill Skill { get; set; }
     }
 }

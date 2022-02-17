@@ -9,10 +9,10 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-@if(TempData.ContainsKey("SaveResult"))
+@if (TempData.ContainsKey("SaveResult"))
 {
     <div class="alert alert-success fade in" role="alert">
-   
+
         <button type="button" class="close" data-dismiss="alert">
             <span>&times;</span>
         </button>
@@ -26,6 +26,18 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HasFreeCourses)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HasPaidSubscription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubscriptionCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsSubcriptionRequired)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.HasApp)
@@ -49,6 +61,18 @@
                 @Html.DisplayFor(modelItem => item.CompanyName)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.HasFreeCourses)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasPaidSubscription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubscriptionCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsSubcriptionRequired)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.HasApp)
             </td>
             <td>
@@ -58,9 +82,10 @@
                 @Html.DisplayFor(modelItem => item.Accreditation)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.CompanyID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.CompanyID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.CompanyID })
+                @Html.ActionLink("Edit", "Edit", new { id = item.CompanyID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CompanyID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CompanyID })
+
             </td>
         </tr>
     }

@@ -23,6 +23,7 @@ namespace TechTrainingTracker.Services
                 new Certification()
                 {
                     AdminID = _userId,
+                    UserID = model.UserID,
                     CertificationName = model.CertificationName,
                     HasExam = model.HasExam,
                     ExamFee = model.ExamFee,
@@ -51,6 +52,7 @@ namespace TechTrainingTracker.Services
                                 new CertificationListItem
                                 {
                                     CertificationID = e.CertificationID,
+                                    UserID = e.UserID,
                                     CertificationName = e.CertificationName,
                                     HasExam = e.HasExam,
                                     ExamFee = e.ExamFee,
@@ -74,7 +76,9 @@ namespace TechTrainingTracker.Services
                 return
                     new CertificationDetail
                     {
+
                         CertificationID = entity.CertificationID,
+                        UserID = entity.UserID,
                         CertificationName = entity.CertificationName,
                         HasExam = entity.HasExam,
                         ExamFee = entity.ExamFee,
@@ -94,6 +98,7 @@ namespace TechTrainingTracker.Services
                         .Certifications
                         .Single(e => e.CertificationID == model.CertificationID && e.AdminID == _userId);
 
+                entity.UserID = model.UserID;
                 entity.CertificationName = model.CertificationName;
                 entity.HasExam = model.HasExam;
                 entity.ExamFee = model.ExamFee;

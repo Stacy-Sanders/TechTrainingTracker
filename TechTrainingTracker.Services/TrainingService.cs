@@ -24,9 +24,12 @@ namespace TechTrainingTracker.Services
                 {
                     AdminID = _userId,
                     CourseName = model.CourseName,
+                    UserID = model.UserID,
                     Language = model.Language,
                     DifficultyLevel = model.DifficultyLevel,
-                    Cost = model.Cost,
+                    IsSubcriptionRequired = model.IsSubcriptionRequired,
+                    IsFree = model.IsFree,
+                    CourseCost = model.CourseCost,
                     LearningLocation = model.LearningLocation,
                     LearningMethod = model.LearningMethod,
                     Duration = model.Duration,
@@ -55,9 +58,12 @@ namespace TechTrainingTracker.Services
                                 {
                                     TrainingID = e.TrainingID,
                                     CourseName = e.CourseName,
+                                    UserID = e.UserID,
                                     Language = e.Language,
                                     DifficultyLevel = e.DifficultyLevel,
-                                    Cost = e.Cost,
+                                    IsSubcriptionRequired = e.IsSubcriptionRequired,
+                                    IsFree = e.IsFree,
+                                    CourseCost = e.CourseCost,
                                     LearningLocation = e.LearningLocation,
                                     LearningMethod = e.LearningMethod,
                                     Duration = e.Duration,
@@ -81,9 +87,12 @@ namespace TechTrainingTracker.Services
                     {
                         TrainingID = entity.TrainingID,
                         CourseName = entity.CourseName,
+                        UserID = entity.UserID,
                         Language = entity.Language,
                         DifficultyLevel = entity.DifficultyLevel,
-                        Cost = entity.Cost,
+                        IsSubcriptionRequired = entity.IsSubcriptionRequired,
+                        IsFree = entity.IsFree,
+                        CourseCost = entity.CourseCost,
                         LearningLocation = entity.LearningLocation,
                         LearningMethod = entity.LearningMethod,
                         Duration = entity.Duration,
@@ -103,8 +112,11 @@ namespace TechTrainingTracker.Services
 
                 entity.CourseName = model.CourseName;
                 entity.Language = model.Language;
+                entity.UserID = model.UserID;
                 entity.DifficultyLevel = model.DifficultyLevel;
-                entity.Cost = model.Cost;
+                entity.IsSubcriptionRequired = model.IsSubcriptionRequired;
+                entity.IsFree = model.IsFree;
+                entity.CourseCost = model.CourseCost;
                 entity.LearningLocation = model.LearningLocation;
                 entity.LearningMethod = model.LearningMethod;
                 entity.Duration = model.Duration;

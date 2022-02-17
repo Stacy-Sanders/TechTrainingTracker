@@ -64,9 +64,12 @@ namespace TechTrainingTracker.WebMVC.Controllers
                 {
                     TrainingID = detail.TrainingID,
                     CourseName = detail.CourseName,
+                    UserID = detail.UserID,
                     Language = detail.Language,
                     DifficultyLevel = detail.DifficultyLevel,
-                    Cost = detail.Cost,
+                    IsSubcriptionRequired = detail.IsSubcriptionRequired,
+                    IsFree = detail.IsFree,
+                    CourseCost = detail.CourseCost,
                     LearningLocation = detail.LearningLocation,
                     LearningMethod = detail.LearningMethod,
                     Duration = detail.Duration,

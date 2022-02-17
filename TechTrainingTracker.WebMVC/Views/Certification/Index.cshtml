@@ -9,20 +9,24 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-@if(TempData.ContainsKey("SaveResult"))
+@if (TempData.ContainsKey("SaveResult"))
 {
     <div class="alert alert-success fade in" role="alert">
-    
+
         <button type="button" class="close" data-dismiss="alert">
             <span>&times;</span>
         </button>
         @TempData["SaveResult"]
     </div>
 }
+
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.CertificationID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserID)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CertificationName)
@@ -45,35 +49,40 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CertificationID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CertificationName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HasExam)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ExamFee)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IssueDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ExpireDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CompanyID)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CertificationID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CertificationID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CertificationID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CertificationID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CertificationName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasExam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExamFee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssueDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpireDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CertificationID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CertificationID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CertificationID })
+
+            </td>
+        </tr>
+    }
 
 </table>

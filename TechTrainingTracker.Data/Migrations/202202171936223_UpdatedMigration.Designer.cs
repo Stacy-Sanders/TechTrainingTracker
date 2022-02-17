@@ -7,13 +7,13 @@ namespace TechTrainingTracker.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class FirstUpdate : IMigrationMetadata
+    public sealed partial class UpdatedMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(FirstUpdate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdatedMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202202142130269_FirstUpdate"; }
+            get { return "202202171936223_UpdatedMigration"; }
         }
         
         string IMigrationMetadata.Source

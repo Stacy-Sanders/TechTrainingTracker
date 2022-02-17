@@ -64,6 +64,10 @@ namespace TechTrainingTracker.WebMVC.Controllers
                 {
                     CompanyID = detail.CompanyID,
                     CompanyName = detail.CompanyName,
+                    HasFreeCourses = detail.HasFreeCourses,
+                    HasPaidSubscription = detail.HasPaidSubscription,
+                    SubscriptionCost = detail.SubscriptionCost,
+                    IsSubcriptionRequired = detail.IsSubcriptionRequired,
                     HasApp = detail.HasApp,
                     HasAccreditedCourses = detail.HasAccreditedCourses,
                     Accreditation = detail.Accreditation

@@ -13,6 +13,9 @@ namespace TechTrainingTracker.Models
     {
         public int CertificationID { get; set; }
 
+        [ForeignKey(nameof(User)), Display(Name = "User ID")]
+        public int UserID { get; set; }
+
         [Display(Name = "Certification Name")]
         public string CertificationName { get; set; }
 

@@ -28,10 +28,28 @@
             @Html.DisplayNameFor(model => model.CourseName)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.UserID)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Language)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Cost)
+            @Html.DisplayNameFor(model => model.DifficultyLevel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsSubcriptionRequired)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsFree)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LearningLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LearningMethod)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Duration)
@@ -52,10 +70,28 @@
                 @Html.DisplayFor(modelItem => item.CourseName)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.UserID)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Language)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Cost)
+                @Html.DisplayFor(modelItem => item.DifficultyLevel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsSubcriptionRequired)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsFree)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LearningLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LearningMethod)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Duration)
@@ -64,9 +100,10 @@
                 @Html.DisplayFor(modelItem => item.CompanyID)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.TrainingID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.TrainingID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.TrainingID })
+                @Html.ActionLink("Edit", "Edit", new { id = item.TrainingID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TrainingID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TrainingID })
+
             </td>
         </tr>
     }

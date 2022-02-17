@@ -10,7 +10,6 @@ namespace TechTrainingTracker.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "TechTrainingTracker.Data.ApplicationDbContext";
         }
 
         protected override void Seed(TechTrainingTracker.Data.ApplicationDbContext context)

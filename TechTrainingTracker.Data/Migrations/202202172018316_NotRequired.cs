@@ -3,16 +3,16 @@ namespace TechTrainingTracker.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class GuidFix : DbMigration
+    public partial class NotRequired : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Certification", "AdminID", c => c.Guid(nullable: false));
+            AlterColumn("dbo.Company", "SubscriptionCost", c => c.Double());
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Certification", "AdminID");
+            AlterColumn("dbo.Company", "SubscriptionCost", c => c.Double(nullable: false));
         }
     }
 }
