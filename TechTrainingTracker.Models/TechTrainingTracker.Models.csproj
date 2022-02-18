@@ -63,6 +63,7 @@
     <Compile Include="Company\CompanyEdit.cs" />
     <Compile Include="Company\CompanyListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Skill\SkillCreate.cs" />
     <Compile Include="Skill\SkillListItem.cs" />
     <Compile Include="Training\TrainingCreate.cs" />
     <Compile Include="Training\TrainingDetail.cs" />

@@ -36,6 +36,10 @@
                     }
                     @if (User.Identity.IsAuthenticated)
                     {
+                        <li>@Html.ActionLink("Skills", "Index", "Skill")</li>
+                    }
+                    @if (User.Identity.IsAuthenticated)
+                    {
                         <li>@Html.ActionLink("Companies", "Index", "Company")</li>
                     }
                     <li>@Html.ActionLink("About", "About", "Home")</li>

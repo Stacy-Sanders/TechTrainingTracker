@@ -16,5 +16,23 @@ namespace TechTrainingTracker.WebMVC.Controllers
             var model = new SkillListItem[0];
             return View(model);
         }
+
+        // GET
+        public ActionResult Create()
+        {
+            return View(); ;
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(SkillCreate model)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+
+            return View(model);
+        }
     }
 }
