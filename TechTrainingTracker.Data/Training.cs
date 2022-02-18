@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -18,9 +19,15 @@ namespace TechTrainingTracker.Data
         [Display(Name = "Course Name")]
         public string CourseName { get; set; }
 
+        [DefaultValue(false)]
+        public bool IsStarred { get; set; }
+
         [ForeignKey(nameof(User))]
         public int UserID { get; set; }
         public virtual User User { get; set; }
+
+        [Required, Display(Name = "Is course currently in progress?")]
+        public bool InProgress { get; set; }
 
         public string Language { get; set; }
 

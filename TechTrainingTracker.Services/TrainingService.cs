@@ -25,6 +25,7 @@ namespace TechTrainingTracker.Services
                     AdminID = _userId,
                     CourseName = model.CourseName,
                     UserID = model.UserID,
+                    InProgress = model.InProgress,
                     Language = model.Language,
                     DifficultyLevel = model.DifficultyLevel,
                     IsSubcriptionRequired = model.IsSubcriptionRequired,
@@ -58,7 +59,9 @@ namespace TechTrainingTracker.Services
                                 {
                                     TrainingID = e.TrainingID,
                                     CourseName = e.CourseName,
+                                    IsStarred = e.IsStarred,
                                     UserID = e.UserID,
+                                    InProgress = e.InProgress,
                                     Language = e.Language,
                                     DifficultyLevel = e.DifficultyLevel,
                                     IsSubcriptionRequired = e.IsSubcriptionRequired,
@@ -88,6 +91,7 @@ namespace TechTrainingTracker.Services
                         TrainingID = entity.TrainingID,
                         CourseName = entity.CourseName,
                         UserID = entity.UserID,
+                        InProgress = entity.InProgress,
                         Language = entity.Language,
                         DifficultyLevel = entity.DifficultyLevel,
                         IsSubcriptionRequired = entity.IsSubcriptionRequired,
@@ -113,6 +117,7 @@ namespace TechTrainingTracker.Services
                 entity.CourseName = model.CourseName;
                 entity.Language = model.Language;
                 entity.UserID = model.UserID;
+                entity.InProgress = model.InProgress;
                 entity.DifficultyLevel = model.DifficultyLevel;
                 entity.IsSubcriptionRequired = model.IsSubcriptionRequired;
                 entity.IsFree = model.IsFree;

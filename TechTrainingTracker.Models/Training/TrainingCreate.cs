@@ -18,6 +18,9 @@ namespace TechTrainingTracker.Models.Training
         [ForeignKey(nameof(User))]
         public int UserID { get; set; }
 
+        [Display(Name = "Is course currently in progress?")]
+        public bool InProgress { get; set; }
+
         public string Language { get; set; }
 
         [Display(Name = "Difficulty Level")]

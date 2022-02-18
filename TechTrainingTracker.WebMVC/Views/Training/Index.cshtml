@@ -28,7 +28,13 @@
             @Html.DisplayNameFor(model => model.CourseName)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.IsStarred)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.UserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InProgress)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Language)
@@ -62,50 +68,82 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TrainingID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Language)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DifficultyLevel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsSubcriptionRequired)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsFree)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseCost)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LearningLocation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LearningMethod)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Duration)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CompanyID)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.TrainingID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.TrainingID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.TrainingID })
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.TrainingID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CourseName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IsStarred)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UserID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.InProgress)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Language)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DifficultyLevel)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IsSubcriptionRequired)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IsFree)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CourseCost)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LearningLocation)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LearningMethod)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Duration)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CompanyID)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.TrainingID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.TrainingID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.TrainingID })
 
-            </td>
-        </tr>
+    </td>
+</tr>
     }
 
 </table>
+@section scripts {
+<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+        $("i[data-toggle='star']")
+            .css({ "cursor": "pointer" })
+            .click(function (e) {
+                var target = $(e.target);
+                var trainingId = target.attr("data-id");
+                var starSet = target.hasClass("glyphicon-star");
+
+                $.ajax({
+                    method: starSet ? "DELETE" : "PUT",
+                    url: "/api/training/" + trainingId + "/star",
+                    data: null
+                })
+                    .done(function (r) {
+                        target.removeClass();
+                        target.addClass("glyphicon " + (starSet ? "glyphicon-star-empty" : "glyphicon-star"));
+                    })
+                    .fail(function (r) {
+                        alert("Failed to change star status");
+                    });
+            });
+    });
+    </script>
+}
