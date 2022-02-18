@@ -22,9 +22,9 @@ namespace TechTrainingTracker.Data
         public string Language { get; set; }
 
         [Display(Name = "Is Language considered one of Top Ten most desirable?")]
-        public bool isTopTenDesirability { get; set; }
+        public bool IsTopTenDesirability { get; set; }
 
-        [Required, Display(Name = "Skill Level.")]
+        [Required, Display(Name = "Skill Level")]
         public string SkillLevel { get; set; }
 
         [Display(Name = "Created Date")]

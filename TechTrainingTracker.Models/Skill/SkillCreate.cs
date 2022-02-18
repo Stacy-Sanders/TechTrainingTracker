@@ -16,7 +16,7 @@ namespace TechTrainingTracker.Models.Skill
         public string Language { get; set; }
 
         [Display(Name = "Is Language considered one of Top Ten most desirable?")]
-        public bool isTopTenDesirability { get; set; }
+        public bool IsTopTenDesirability { get; set; }
 
         [Display(Name = "Skill Level")]
         public string SkillLevel { get; set; }

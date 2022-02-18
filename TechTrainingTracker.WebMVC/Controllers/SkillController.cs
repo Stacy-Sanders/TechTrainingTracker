@@ -27,7 +27,7 @@ namespace TechTrainingTracker.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(SkillCreate model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
 
             }
