@@ -69,6 +69,10 @@
     <Compile Include="Migrations\202202172018316_NotRequired.Designer.cs">
       <DependentUpon>202202172018316_NotRequired.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202181540096_UserUpdate.cs" />
+    <Compile Include="Migrations\202202181540096_UserUpdate.Designer.cs">
+      <DependentUpon>202202181540096_UserUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Skill.cs" />
@@ -88,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202172018316_NotRequired.resx">
       <DependentUpon>202202172018316_NotRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202181540096_UserUpdate.resx">
+      <DependentUpon>202202181540096_UserUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -11,7 +11,7 @@ namespace TechTrainingTracker.Models.Company
     {
         public int CompanyID { get; set; }
 
-        [Required, Display(Name = "Company Name")]
+        [Display(Name = "Company Name")]
         public string CompanyName { get; set; }
 
         [Display(Name = "Does the company offer free courses?")]

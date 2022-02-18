@@ -65,7 +65,11 @@ namespace TechTrainingTracker.WebMVC.Controllers
                     UserID = detail.UserID,
                     FirstName = detail.FirstName,
                     LastName = detail.LastName,
-                    Address = detail.Address,
+                    StreetAddress = detail.StreetAddress,
+                    StreetAddress2 = detail.StreetAddress2,
+                    City = detail.City,
+                    State = detail.State,
+                    ZipCode = detail.ZipCode,
                     PhoneNumber = detail.PhoneNumber,
                     EmailAddress = detail.EmailAddress
                 };

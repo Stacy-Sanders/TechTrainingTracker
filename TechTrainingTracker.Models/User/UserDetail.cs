@@ -26,7 +26,19 @@ namespace TechTrainingTracker.Models.User
             }
         }
 
-        public string Address { get; set; }
+        [Display(Name = "Street Address")]
+        public string StreetAddress { get; set; }
+
+        [Display(Name = "Street Address 2")]
+        public string StreetAddress2 { get; set; }
+
+        public string City { get; set; }
+
+        [MaxLength(2)]
+        public string State { get; set; }
+
+        [MaxLength(5), Display(Name = "Zip Code")]
+        public string ZipCode { get; set; }
 
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }

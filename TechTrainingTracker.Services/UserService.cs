@@ -25,7 +25,11 @@ namespace TechTrainingTracker.Services
                     AdminID = _userId,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
-                    Address = model.Address,
+                    StreetAddress = model.StreetAddress,
+                    StreetAddress2 = model.StreetAddress2,
+                    City = model.City,
+                    State = model.State,
+                    ZipCode = model.ZipCode,
                     PhoneNumber = model.PhoneNumber,
                     EmailAddress = model.EmailAddress
                 };
@@ -52,7 +56,11 @@ namespace TechTrainingTracker.Services
                                         UserID = e.UserID,
                                         FirstName = e.FirstName,
                                         LastName = e.LastName,
-                                        Address = e.Address,
+                                        StreetAddress = e.StreetAddress,
+                                        StreetAddress2 = e.StreetAddress2,
+                                        City = e.City,
+                                        State = e.State,
+                                        ZipCode = e.ZipCode,
                                         PhoneNumber = e.PhoneNumber,
                                         EmailAddress = e.EmailAddress
                                     }
@@ -76,7 +84,11 @@ namespace TechTrainingTracker.Services
                         UserID = entity.UserID,
                         FirstName = entity.FirstName,
                         LastName = entity.LastName,
-                        Address = entity.Address,
+                        StreetAddress = entity.StreetAddress,
+                        StreetAddress2 = entity.StreetAddress2,
+                        City = entity.City,
+                        State = entity.State,
+                        ZipCode = entity.ZipCode,
                         PhoneNumber = entity.PhoneNumber,
                         EmailAddress = entity.EmailAddress
                     };
@@ -94,7 +106,11 @@ namespace TechTrainingTracker.Services
 
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
-                entity.Address = model.Address;
+                entity.StreetAddress = model.StreetAddress;
+                entity.StreetAddress2 = model.StreetAddress2;
+                entity.City = model.City;
+                entity.State = model.State;
+                entity.ZipCode = model.ZipCode;
                 entity.PhoneNumber = model.PhoneNumber;
                 entity.EmailAddress = model.EmailAddress;
 

@@ -32,16 +32,25 @@ namespace TechTrainingTracker.Data
             }
         }
 
-        public string Address { get; set; }
+        [Required, Display(Name = "Street Address")]
+        public string StreetAddress { get; set; }
+
+        [Display(Name = "Street Address 2")]
+        public string StreetAddress2 { get; set; }
+
+        [Required]
+        public string City { get; set; }
+
+        [Required, MaxLength(2)]
+        public string State { get; set; }
+
+        [Required, MaxLength(5), Display(Name = "Zip Code")]
+        public string ZipCode { get; set; }
 
         [Required, Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
         [Required, Display(Name = "Email Address")]
         public string EmailAddress { get; set; }
-
-        //[ForeignKey(nameof(Skill))]
-        //public int SkillID { get; set; }
-        //public virtual Skill Skill { get; set; }
     }
 }

@@ -11,10 +11,10 @@ namespace TechTrainingTracker.Models.User
     {
         public int UserID { get; set; }
 
-        [Required, Display(Name = "First Name")]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
-        [Required, Display(Name = "Last Name")]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
         [Display(Name = "Full Name")]
@@ -26,12 +26,24 @@ namespace TechTrainingTracker.Models.User
             }
         }
 
-        public string Address { get; set; }
+        [Display(Name = "Street Address")]
+        public string StreetAddress { get; set; }
 
-        [Required, Display(Name = "Phone Number")]
+        [Display(Name = "Street Address 2")]
+        public string StreetAddress2 { get; set; }
+
+        public string City { get; set; }
+
+        [MaxLength(2)]
+        public string State { get; set; }
+
+        [MaxLength(5), Display(Name = "Zip Code")]
+        public string ZipCode { get; set; }
+
+        [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
-        [Required, Display(Name = "Email Address")]
+        [Display(Name = "Email Address")]
         public string EmailAddress { get; set; }
     }
 }

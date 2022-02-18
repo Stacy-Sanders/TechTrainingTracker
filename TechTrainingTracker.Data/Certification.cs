@@ -22,8 +22,6 @@ namespace TechTrainingTracker.Data
         [Required, Display(Name = "Certification Name")]
         public string CertificationName { get; set; }
 
-        //public string Desirability { get; set; }
-
         [Required, Display(Name = "Exam Required?")]
         public bool HasExam { get; set; }
 

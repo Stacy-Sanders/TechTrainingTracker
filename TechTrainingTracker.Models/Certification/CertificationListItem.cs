@@ -16,13 +16,13 @@ namespace TechTrainingTracker.Models
         [ForeignKey(nameof(User)), Display(Name = "User ID")]
         public int UserID { get; set; }
 
-        [Required, Display(Name = "Certification Name")]
+        [Display(Name = "Certification Name")]
         public string CertificationName { get; set; }
 
-        [Required, Display(Name = "Exam Required?")]
+        [Display(Name = "Exam Required?")]
         public bool HasExam { get; set; }
 
-        [Required, Display(Name = "Exam Fee ($USD)")]
+        [Display(Name = "Exam Fee ($USD)")]
         public double ExamFee { get; set; }
 
         [Display(Name = "Issued")]

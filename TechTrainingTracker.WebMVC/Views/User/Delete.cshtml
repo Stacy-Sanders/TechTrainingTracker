@@ -6,8 +6,9 @@
 
 <h2>Delete</h2>
 
-<h3>Delete user?</h3>
+<h3>Delete User?</h3>
 <div>
+    <h4>UserDetail</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -43,11 +44,43 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Address)
+            @Html.DisplayNameFor(model => model.StreetAddress)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Address)
+            @Html.DisplayFor(model => model.StreetAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetAddress2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StreetAddress2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZipCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZipCode)
         </dd>
 
         <dt>
