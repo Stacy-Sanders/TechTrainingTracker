@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TechTrainingTracker.Models.Skill;
+using TechTrainingTracker.Services;
 
 namespace TechTrainingTracker.WebMVC.Controllers
 {
@@ -13,7 +15,10 @@ namespace TechTrainingTracker.WebMVC.Controllers
         // GET: Skill
         public ActionResult Index()
         {
-            var model = new SkillListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new SkillService(userId);
+            var model = service.GetSkills();
+            
             return View(model);
         }
 
@@ -27,12 +32,39 @@ namespace TechTrainingTracker.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(SkillCreate model)
         {
-            if (!ModelState.IsValid)
-            {
+            if (!ModelState.IsValid) return View(model);
 
-            }
+            var service = CreateSkillService();
+
+            if (service.CreateSkill(model))
+            {
+                TempData["SaveResult"] = "Your skill was created.";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Skill could not be created.");
 
             return View(model);
         }
+
+        public ActionResult Details(int id)
+        {
+            var svc = CreateSkillService();
+            var model = svc.GetSkillByUserID(id);
+
+            return View(model);
+        }
+
+        private SkillService CreateSkillService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new SkillService(userId);
+            return service;
+        }
     }
 }
+            
+
+            
+
+            

@@ -61,7 +61,26 @@ namespace TechTrainingTracker.Services
                 return query.ToArray();
             }
         }
+        public SkillDetail GetSkillByUserID(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Skills
+                        .Single(e => e.UserID == id && e.AdminId == _userId);
+                return
+                    new SkillDetail
+                    {
+                        SkillID = entity.SkillID,
+                        UserID = entity.UserID,
+                        Language = entity.Language,
+                        IsTopTenDesirability = entity.IsTopTenDesirability,
+                        SkillLevel = entity.SkillLevel,
+                        CreatedUtc = entity.CreatedUtc,
+                        ModifiedUtc = entity.ModifiedUtc
+                    };
+            }
+        }
     }
 }
-
-    
