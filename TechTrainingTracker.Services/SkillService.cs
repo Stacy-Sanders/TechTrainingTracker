@@ -61,14 +61,14 @@ namespace TechTrainingTracker.Services
                 return query.ToArray();
             }
         }
-        public SkillDetail GetSkillByUserID(int id)
+        public SkillDetail GetSkillByID(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Skills
-                        .Single(e => e.UserID == id && e.AdminId == _userId);
+                        .Single(e => e.SkillID == id && e.AdminId == _userId);
                 return
                     new SkillDetail
                     {
@@ -80,6 +80,40 @@ namespace TechTrainingTracker.Services
                         CreatedUtc = entity.CreatedUtc,
                         ModifiedUtc = entity.ModifiedUtc
                     };
+            }
+        }
+
+        public bool UpdateSkill(SkillEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Skills
+                        .Single(e => e.SkillID == model.SkillID && e.AdminId == _userId);
+
+                entity.UserID = model.UserID;
+                entity.Language = model.Language;
+                entity.IsTopTenDesirability = model.IsTopTenDesirability;
+                entity.SkillLevel = model.SkillLevel;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteSkill(int skillID)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Skills
+                        .Single(e => e.SkillID == skillID && e.AdminId == _userId);
+
+                ctx.Skills.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }
