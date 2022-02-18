@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TechTrainingTracker.Models.Skill;
 
 namespace TechTrainingTracker.WebMVC.Controllers
 {
@@ -12,7 +13,8 @@ namespace TechTrainingTracker.WebMVC.Controllers
         // GET: Skill
         public ActionResult Index()
         {
-            return View();
+            var model = new SkillListItem[0];
+            return View(model);
         }
     }
 }
