@@ -73,6 +73,7 @@ namespace TechTrainingTracker.Services
                                     CompanyID = e.CompanyID
                                 }
                         );
+
                 return query.ToArray();        
             }
         }
@@ -115,6 +116,7 @@ namespace TechTrainingTracker.Services
                         .Single(e => e.TrainingID == model.TrainingID && e.AdminID == _userId);
 
                 entity.CourseName = model.CourseName;
+                entity.IsStarred = model.IsStarred;
                 entity.Language = model.Language;
                 entity.UserID = model.UserID;
                 entity.InProgress = model.InProgress;

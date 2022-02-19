@@ -16,6 +16,8 @@ namespace TechTrainingTracker.Models.Training
         [Display(Name = "Course Name")]
         public string CourseName { get; set; }
 
+        public bool IsStarred { get; set; }
+
         [ForeignKey(nameof(User))]
         public int UserID { get; set; }
 

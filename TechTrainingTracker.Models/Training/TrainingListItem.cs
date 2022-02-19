@@ -17,7 +17,7 @@ namespace TechTrainingTracker.Models.Training
         [Display(Name = "Course Name")]
         public string CourseName { get; set; }
 
-        [UIHint("Starred")]
+        [UIHint("Starred"), Display(Name = "Potential Next Project")]
         public bool IsStarred { get; set; }
 
         [ForeignKey(nameof(User))]
