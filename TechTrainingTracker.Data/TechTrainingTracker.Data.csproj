@@ -89,6 +89,10 @@
     <Compile Include="Migrations\202202182129002_StarProgressUpdate.Designer.cs">
       <DependentUpon>202202182129002_StarProgressUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202202102224_InitialSeed.cs" />
+    <Compile Include="Migrations\202202202102224_InitialSeed.Designer.cs">
+      <DependentUpon>202202202102224_InitialSeed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Skill.cs" />
@@ -114,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202182129002_StarProgressUpdate.resx">
       <DependentUpon>202202182129002_StarProgressUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202202102224_InitialSeed.resx">
+      <DependentUpon>202202202102224_InitialSeed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
