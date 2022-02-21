@@ -15,6 +15,9 @@ namespace TechTrainingTracker.Models.Training
         [Display(Name = "Course Name")]
         public string CourseName { get; set; }
 
+        [Display(Name = "Course Website")]
+        public string CourseWebsite { get; set; }
+
         [ForeignKey(nameof(User))]
         public int UserID { get; set; }
 

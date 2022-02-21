@@ -19,6 +19,9 @@ namespace TechTrainingTracker.Data
         [Display(Name = "Course Name")]
         public string CourseName { get; set; }
 
+        [Display(Name = "Course Website")]
+        public string CourseWebsite { get; set; }
+
         [DefaultValue(false)]
         public bool IsStarred { get; set; }
 

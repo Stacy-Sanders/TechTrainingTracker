@@ -71,7 +71,8 @@ namespace TechTrainingTracker.WebMVC.Controllers
                     State = detail.State,
                     ZipCode = detail.ZipCode,
                     PhoneNumber = detail.PhoneNumber,
-                    EmailAddress = detail.EmailAddress
+                    EmailAddress = detail.EmailAddress,
+                    PortfolioURL = detail.PortfolioURL
                 };
 
             return View(model);

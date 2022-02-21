@@ -43,5 +43,8 @@ namespace TechTrainingTracker.Models.User
 
         [Display(Name = "Email Address")]
         public string EmailAddress { get; set; }
+
+        [Display(Name = "Portfolio URL")]
+        public string PortfolioURL { get; set; }
     }
 }
