@@ -24,6 +24,7 @@ namespace TechTrainingTracker.Services
                 {
                     AdminID = _userId,
                     CompanyName = model.CompanyName,
+                    CompanyWebsite = model.CompanyWebsite,
                     HasFreeCourses = model.HasFreeCourses,
                     HasPaidSubscription = model.HasPaidSubscription,
                     SubscriptionCost = model.SubscriptionCost,
@@ -54,6 +55,7 @@ namespace TechTrainingTracker.Services
                                 {
                                     CompanyID = e.CompanyID,
                                     CompanyName = e.CompanyName,
+                                    CompanyWebsite = e.CompanyWebsite,
                                     HasPaidSubscription = e.HasPaidSubscription,
                                     SubscriptionCost = e.SubscriptionCost,
                                     IsSubcriptionRequired = e.IsSubcriptionRequired,
@@ -80,6 +82,7 @@ namespace TechTrainingTracker.Services
                     {
                         CompanyID = entity.CompanyID,
                         CompanyName = entity.CompanyName,
+                        CompanyWebsite = entity.CompanyWebsite,
                         HasFreeCourses = entity.HasFreeCourses,
                         HasPaidSubscription = entity.HasPaidSubscription,
                         SubscriptionCost = entity.SubscriptionCost,
@@ -101,6 +104,7 @@ namespace TechTrainingTracker.Services
                         .Single(e => e.CompanyID == model.CompanyID && e.AdminID == _userId);
 
                 entity.CompanyName = model.CompanyName;
+                entity.CompanyWebsite = model.CompanyWebsite;
                 entity.HasFreeCourses = model.HasFreeCourses;
                 entity.HasPaidSubscription = model.HasPaidSubscription;
                 entity.SubscriptionCost = model.SubscriptionCost;
