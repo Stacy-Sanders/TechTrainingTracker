@@ -1,6 +1,15 @@
 ﻿body {
+    background-color: #023e7d;
     padding-top: 50px;
     padding-bottom: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #eb5e28;
+}
+
+.jumbotron {
+    background-image: url("https://images.unsplash.com/photo-1598662779094-110c2bad80b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1246&q=80");
+    color: #cae9ff
+    ;
 }
 
 /* Set padding to keep content from hitting the edges */
