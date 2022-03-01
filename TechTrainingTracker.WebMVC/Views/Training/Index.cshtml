@@ -28,6 +28,9 @@
             @Html.DisplayNameFor(model => model.CourseName)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.CourseWebsite)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.IsStarred)
         </th>
         <th>
@@ -68,56 +71,59 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TrainingID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsStarred, new { Id = item.TrainingID })
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.InProgress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Language)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DifficultyLevel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsSubcriptionRequired)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsFree)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseCost)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LearningLocation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LearningMethod)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Duration)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CompanyID)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.TrainingID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.TrainingID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.TrainingID })
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.TrainingID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CourseName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CourseWebsite)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IsStarred, new { Id = item.TrainingID })
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UserID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.InProgress)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Language)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DifficultyLevel)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IsSubcriptionRequired)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IsFree)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CourseCost)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LearningLocation)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LearningMethod)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Duration)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CompanyID)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.TrainingID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.TrainingID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.TrainingID })
 
-            </td>
-        </tr>
+    </td>
+</tr>
     }
 
 </table>

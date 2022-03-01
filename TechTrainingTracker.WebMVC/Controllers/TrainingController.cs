@@ -64,6 +64,7 @@ namespace TechTrainingTracker.WebMVC.Controllers
                 {
                     TrainingID = detail.TrainingID,
                     CourseName = detail.CourseName,
+                    CourseWebsite = detail.CourseWebsite,
                     UserID = detail.UserID,
                     Language = detail.Language,
                     DifficultyLevel = detail.DifficultyLevel,

@@ -17,6 +17,9 @@ namespace TechTrainingTracker.Data
         [Required, Display(Name = "Company Name")]
         public string CompanyName { get; set; }
 
+        [Display(Name = "Company Website")]
+        public string CompanyWebsite { get; set; }
+
         [Display(Name = "Does the company offer free courses?")]
         public bool HasFreeCourses { get; set; }
 

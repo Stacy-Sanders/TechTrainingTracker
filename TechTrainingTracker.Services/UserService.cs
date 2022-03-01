@@ -31,7 +31,8 @@ namespace TechTrainingTracker.Services
                     State = model.State,
                     ZipCode = model.ZipCode,
                     PhoneNumber = model.PhoneNumber,
-                    EmailAddress = model.EmailAddress
+                    EmailAddress = model.EmailAddress,
+                    PortfolioURL = model.PortfolioURL
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -62,7 +63,8 @@ namespace TechTrainingTracker.Services
                                         State = e.State,
                                         ZipCode = e.ZipCode,
                                         PhoneNumber = e.PhoneNumber,
-                                        EmailAddress = e.EmailAddress
+                                        EmailAddress = e.EmailAddress,
+                                        PortfolioURL = e.PortfolioURL
                                     }
                         );
 
@@ -90,7 +92,8 @@ namespace TechTrainingTracker.Services
                         State = entity.State,
                         ZipCode = entity.ZipCode,
                         PhoneNumber = entity.PhoneNumber,
-                        EmailAddress = entity.EmailAddress
+                        EmailAddress = entity.EmailAddress,
+                        PortfolioURL = entity.PortfolioURL
                     };
             }
         }
@@ -113,6 +116,7 @@ namespace TechTrainingTracker.Services
                 entity.ZipCode = model.ZipCode;
                 entity.PhoneNumber = model.PhoneNumber;
                 entity.EmailAddress = model.EmailAddress;
+                entity.PortfolioURL = model.PortfolioURL;
 
                 return ctx.SaveChanges() == 1;
             }

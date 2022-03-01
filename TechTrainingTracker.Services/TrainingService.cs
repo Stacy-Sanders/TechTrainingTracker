@@ -24,6 +24,7 @@ namespace TechTrainingTracker.Services
                 {
                     AdminID = _userId,
                     CourseName = model.CourseName,
+                    CourseWebsite = model.CourseWebsite,
                     UserID = model.UserID,
                     InProgress = model.InProgress,
                     Language = model.Language,
@@ -59,6 +60,7 @@ namespace TechTrainingTracker.Services
                                 {
                                     TrainingID = e.TrainingID,
                                     CourseName = e.CourseName,
+                                    CourseWebsite = e.CourseWebsite,
                                     IsStarred = e.IsStarred,
                                     UserID = e.UserID,
                                     InProgress = e.InProgress,
@@ -91,6 +93,7 @@ namespace TechTrainingTracker.Services
                     {
                         TrainingID = entity.TrainingID,
                         CourseName = entity.CourseName,
+                        CourseWebsite = entity.CourseWebsite,
                         UserID = entity.UserID,
                         InProgress = entity.InProgress,
                         Language = entity.Language,
@@ -116,6 +119,7 @@ namespace TechTrainingTracker.Services
                         .Single(e => e.TrainingID == model.TrainingID && e.AdminID == _userId);
 
                 entity.CourseName = model.CourseName;
+                entity.CourseWebsite = model.CourseWebsite;
                 entity.IsStarred = model.IsStarred;
                 entity.Language = model.Language;
                 entity.UserID = model.UserID;
