@@ -1,4 +1,4 @@
-Tech Training Tracker
+[Tech Training Tracker](https://techtrainingtracker.azurewebsites.net/)
 
 
 
@@ -28,6 +28,12 @@ The Tech Training Tracker has been built with the idea that a user will create a
 Upon running the application, a user is able to create a user account or sign in to an existing account.
 
 The user is able to:
+
+1. Create a user identity, ID is automatically assigned upon creation.
+2. Create a company. User will add a company that is offering their training and/or certification. An ID will be automatically assigned upon creation, and they can add as many      companies as needed.
+3. Create a training. User will add a training course, an ID will be automatically assigned upon creation. When adding a training course, the user will need to know their UserID    and the CompanyID for the company offering the training.
+4. Create a certification. User will add a certification, an ID will be automatically assigned upon creation. When adding a certification, the user will need to know their          UserID and the CompanyID, if available, for the company issuing the certification.
+5. Create a skill. User will add a skill, an ID will be automatically assigned upon creation. When adding a skill, the user will need to know their UserID.
 
 
 
